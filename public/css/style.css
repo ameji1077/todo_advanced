@@ -1,0 +1,203 @@
+.container{
+  height: 100vh;
+  width: 100vw;
+  background: #2E227C;
+  position: relative;
+}
+
+.content{
+  background: #fff;
+  width: 50vw;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 10px;
+}
+
+.title{
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.user_form{
+  display: flex;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.user_name{
+  margin: auto 10px;
+}
+
+.logout_button{
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ff0000;
+  background-color: #ffffff;
+  text-align: center;
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+}
+
+.logout_button:hover{
+  transition: 0.5s;
+  color: #ffffff;
+  background-color: #ff0000;
+}
+
+.find_button{
+  display: inline-block;
+  margin: 10px 0px;
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #CDF119;
+  text-align: center;
+  border: 2px solid #CDF119;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.find_button:hover{
+  transition: 0.5s;
+  color: #ffffff;
+  background-color: #CDF119;
+}
+
+.todo_add_form{
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo_content{
+  display: block;
+  width: 80%;
+  border: 1px solid #CCC;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.todo_tag{
+  margin: 0 2%;
+  padding: 5px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+}
+
+.todo_add_button{
+  border: 2px solid #DC70FA;
+  border-radius: 10px;
+  color: #DC70FA;
+  font-weight: bold;
+  background: #fff;
+  width: 10%;
+  cursor: pointer;
+}
+
+.todo_add_button:hover{
+  transition: 0.5s;
+  color: #ffffff;
+  background-color: #DC70FA;
+}
+
+.content_error{
+  color: red;
+}
+
+.todos_table{
+  width: 100%;
+  margin: 30px 0px 10px;
+  text-align: center;
+}
+
+.todos_table tr{
+  margin: 5px;
+  height: 50px;
+}
+
+.todo_update{
+  width: 95%;
+  height: 25px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+}
+
+.todo_update_button{
+  border: 2px solid #FA9770;
+  border-radius: 5px;
+  color: #FA9770;
+  font-weight: bold;
+  background: #fff;
+  width: 65%;
+  height: 40px;
+  cursor: pointer;
+}
+
+.todo_update_button:hover{
+  transition: 0.5s;
+  color: #ffffff;
+  background-color: #FA9770;
+}
+
+.todo_delete_button{
+  border: 2px solid #71FADC;
+  border-radius: 5px;
+  color: #71FADC;
+  font-weight: bold;
+  background: #fff;
+  width: 65%;
+  height: 40px;
+  cursor: pointer;
+}
+
+.todo_delete_button:hover{
+  transition: 0.5s;
+  color: #ffffff;
+  background-color: #71FADC;
+}
+
+
+.todo_search_form{
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo_search_button{
+  border: 2px solid #DC70FA;
+  border-radius: 10px;
+  color: #DC70FA;
+  font-weight: bold;
+  background: #fff;
+  width: 10%;
+  cursor: pointer;
+}
+
+.todo_search_button:hover{
+  transition: 0.5s;
+  color: #ffffff;
+  background-color: #DC70FA;
+}
+
+.back_button{
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 12px;
+  color: #808080;
+  text-align: center;
+  border: 2px solid #808080;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.back_button:hover{
+  transition: 0.5s;
+  color: #ffffff;
+  background-color: #808080;
+}
