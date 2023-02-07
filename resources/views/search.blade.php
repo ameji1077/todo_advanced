@@ -14,7 +14,7 @@
   @csrf
   <input type="text" class="todo_content" name="keyword">
   <select name="tag_id" class="todo_tag">
-    <option selected value="@foreach ($tags as $tag) {{$tag->id}} @endforeach"></option>
+    <option disabled selected value=""></option>
     @foreach ($tags as $tag)
     <option value="{{$tag->id}}">{{$tag->name}}</option>
     @endforeach
@@ -33,7 +33,7 @@
   @if ($user->id === $todo->user_id)
   <tr>
     <td>{{$todo->updated_at}}</td>
-    <form action="/find/update" method="POST" class="todo_update_form">
+    <form action="/update" method="POST" class="todo_update_form">
       @csrf
       <td>
         <input type="text" class="todo_update" name="content" value="{{$todo->content}}">
@@ -52,7 +52,7 @@
       </td>
     </form>
     <td>
-      <form action="/find/delete" method="POST" class="todo_delete_form">
+      <form action="/delete" method="POST" class="todo_delete_form">
         @csrf
         <input type="hidden" name="id" value="{{$todo->id}}">
         <button class="todo_delete_button">削除</button>

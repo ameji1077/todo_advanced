@@ -43,13 +43,13 @@ class TodoController extends Controller
         ];
         unset($todo['_token']);
         Todo::where('id', $request->id)->update($todo);
-        return redirect('/todo-list');
+        return back();  //redirect('/todo-list');
     }
 
     public function destroy(Request $request)
     {
         $todo = Todo::find($request->id)->delete();
-        return redirect('/todo-list')->with(compact('todo'));
+        return back(); //redirect('/todo-list')->with(compact('todo'));
     }
 
     public function find()
@@ -69,24 +69,10 @@ class TodoController extends Controller
     {
         $user = Auth::user();
         $tags = Tag::all();
-        $todos = Todo::where('content','LIKE BINARY',"%{$request->keyword}%")->where('tag_id',$request->tag_id)->get();
+        if ($request->keyword == null && $request->tag_id == null) {
+            $todos = Todo::all();
+        } else
+            $todos = Todo::where('content','LIKE BINARY',"%{$request->keyword}%")->where('tag_id',$request->tag_id)->get();
         return view('search',['user' => $user, 'tags' => $tags, 'todos' => $todos]);
-    }
-
-    public function findUpdate(TodoRequest $request)
-    {
-        $todo = [
-            'content' => $request->content,
-            'tag_id' => $request->tag_id
-        ];
-        unset($todo['_token']);
-        Todo::where('id', $request->id)->update($todo);
-        return redirect('/find');
-    }
-
-    public function findDestroy(Request $request)
-    {
-        $todo = Todo::find($request->id)->delete();
-        return redirect('/find')->with(compact('todo'));
     }
 }
