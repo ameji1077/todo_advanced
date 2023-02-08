@@ -71,8 +71,11 @@ class TodoController extends Controller
         $tags = Tag::all();
         if ($request->keyword == null && $request->tag_id == null) {
             $todos = Todo::all();
-        } else
+        } else if ($request->keyword != null && $request->tag_id == null) {
+            $todos = Todo::where('content','LIKE BINARY',"%{$request->keyword}%")->get();
+        } else {
             $todos = Todo::where('content','LIKE BINARY',"%{$request->keyword}%")->where('tag_id',$request->tag_id)->get();
+        }
         return view('search',['user' => $user, 'tags' => $tags, 'todos' => $todos]);
     }
 }
