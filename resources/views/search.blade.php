@@ -10,11 +10,11 @@
     <button class="logout_button">ログアウト</button>
   </form>
 </div>
-<form action="/find" method="POST" class="todo_search_form">
+<form action="/find" method="GET" class="todo_search_form">
   @csrf
   <input type="text" class="todo_content" name="keyword">
   <select name="tag_id" class="todo_tag">
-    <option disabled selected value=""></option>
+    <option selected value="blank"></option>
     @foreach ($tags as $tag)
     <option value="{{$tag->id}}">{{$tag->name}}</option>
     @endforeach

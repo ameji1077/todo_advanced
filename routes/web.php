@@ -29,6 +29,4 @@ Route::post('/create', [TodoController::class, 'store']);
 Route::post('/update', [TodoController::class, 'update']);
 Route::post('/delete', [TodoController::class, 'destroy']);
 Route::get('/find', [TodoController::class, 'find']);
-Route::post('/find', [TodoController::class, 'search']);
-Route::post('/find/update', [TodoController::class, 'findUpdate']);
-Route::post('/find/delete', [TodoController::class, 'findDestroy']);
+Route::get('/find', [TodoController::class, 'search']);

@@ -69,9 +69,9 @@ class TodoController extends Controller
     {
         $user = Auth::user();
         $tags = Tag::all();
-        if ($request->keyword == null && $request->tag_id == null) {
+        if ($request->keyword == null && $request->tag_id == 'blank') {
             $todos = Todo::all();
-        } else if ($request->keyword != null && $request->tag_id == null) {
+        } else if ($request->keyword != null && $request->tag_id == 'blank') {
             $todos = Todo::where('content','LIKE BINARY',"%{$request->keyword}%")->get();
         } else {
             $todos = Todo::where('content','LIKE BINARY',"%{$request->keyword}%")->where('tag_id',$request->tag_id)->get();
