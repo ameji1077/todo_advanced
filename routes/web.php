@@ -28,5 +28,5 @@ Route::get('/todo-list', [TodoController::class, 'index'])->middleware('auth');
 Route::post('/create', [TodoController::class, 'store']);
 Route::post('/update', [TodoController::class, 'update']);
 Route::post('/delete', [TodoController::class, 'destroy']);
-Route::get('/find', [TodoController::class, 'find']);
-Route::get('/find', [TodoController::class, 'search']);
+Route::get('/find', [TodoController::class, 'find'])->middleware('auth');
+Route::get('/find', [TodoController::class, 'search'])->middleware('auth');
